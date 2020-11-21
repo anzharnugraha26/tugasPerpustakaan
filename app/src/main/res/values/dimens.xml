@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="margin_top_small">5dp</dimen>
+    <dimen name="otp_box">40dp</dimen>
+    <dimen name="otp_text_size">20sp</dimen>
+    <dimen name="edittext_error_margin">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

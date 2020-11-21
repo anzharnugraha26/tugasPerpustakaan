@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Application Perpustakaan</string>
+
+    <string name="buku_agama">Buku Agama</string>
+    <string name="buku_komputer">Buku Komputer</string>
+    <string name="novel">Novel</string>
+    <string name="lain_lain">Lain-lain</string>
+
+    <string-array name="daftar_penerbit">
+        <item>Gramedia</item>
+        <item>Elexmedia Komputindo</item>
+        <item>Andi Publisher.</item>
+        <item>Gagas Media</item>
+    </string-array>
+    <string name="title_activity_add">Add</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
