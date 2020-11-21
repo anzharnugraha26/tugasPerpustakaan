@@ -8,6 +8,8 @@ public class Buku {
     private String penerbit;
     private String kategori;
     private String rangkuman;
+    private Float ratting;
+    private Integer jumlah ;
 
     public Long getId() {
         return id;
@@ -63,5 +65,21 @@ public class Buku {
 
     public void setRangkuman(String rangkuman) {
         this.rangkuman = rangkuman;
+    }
+
+    public Float getRatting() {
+        return ratting;
+    }
+
+    public void setRatting(Float ratting) {
+        this.ratting = ratting;
+    }
+
+    public Integer getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(Integer jumlah) {
+        this.jumlah = jumlah;
     }
 }

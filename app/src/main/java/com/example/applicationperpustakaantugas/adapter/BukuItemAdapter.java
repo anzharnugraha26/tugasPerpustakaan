@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.AppCompatRatingBar;
+
 import com.example.applicationperpustakaantugas.R;
 import com.example.applicationperpustakaantugas.model.Buku;
 
@@ -28,11 +30,13 @@ public class BukuItemAdapter extends ArrayAdapter<Buku> {
         TextView etJudul = listItemView.findViewById(R.id.tJudulBuku);
         TextView etNovel = listItemView.findViewById(R.id.tNovel);
         TextView etPenerbit = listItemView.findViewById(R.id.tPenerbit);
+        AppCompatRatingBar appCompatRatingBar = listItemView.findViewById(R.id.rRatingb);
 
         Buku buku = getItem(position);
         etJudul.setText(buku.getJudul_buku());
         etNovel.setText(buku.getKategori());
         etPenerbit.setText(buku.getPenerbit());
+        appCompatRatingBar.setRating(buku.getRatting());
 
         return listItemView;
     }

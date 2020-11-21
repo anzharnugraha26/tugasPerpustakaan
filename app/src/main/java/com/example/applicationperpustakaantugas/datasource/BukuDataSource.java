@@ -25,6 +25,8 @@ public class BukuDataSource {
         contentValues.put("penerbit", buku.getPenerbit());
         contentValues.put("kategori", buku.getKategori());
         contentValues.put("rangkuman", buku.getRangkuman());
+        contentValues.put("ratting", buku.getRatting());
+        contentValues.put("jumlah" , buku.getJumlah());
         return contentValues;
 
     }
@@ -39,6 +41,8 @@ public class BukuDataSource {
         buku.setPenerbit(cursor.getString(4));
         buku.setKategori(cursor.getString(5));
         buku.setRangkuman(cursor.getString(6));
+        buku.setRatting(cursor.getFloat(7));
+        buku.setJumlah(cursor.getInt(8));
         return buku;
     }
 

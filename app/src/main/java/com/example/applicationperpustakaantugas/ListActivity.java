@@ -60,10 +60,15 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void delete(Buku buku) {
-        DBHelper dbHelper = new DBHelper(this);
-        BukuDataSource dataSource = new BukuDataSource(dbHelper);
-        dataSource.remove(buku);
-        adapter.notifyDataSetChanged();
+       try {
+           DBHelper dbHelper = new DBHelper(this);
+           BukuDataSource dataSource = new BukuDataSource(dbHelper);
+           dataSource.remove(buku);
+           adapter.remove(buku);
+           adapter.notifyDataSetChanged();
+       } catch (Exception error){
+           Toast.makeText(this, error.getMessage(), Toast.LENGTH_SHORT).show();
+       }
     }
 
     private void searchBuku(String keyword){
@@ -110,9 +115,7 @@ public class ListActivity extends AppCompatActivity {
                 break;
             case R.id.action_delete:
                 delete(adapter.getItem(selectedPosition));
-                Intent intent = new Intent(ListActivity.this, ListActivity.class);
-                startActivity(intent);
-                Toast.makeText(this, "Delete Sukses", Toast.LENGTH_SHORT).show();
+
                 break;
         }
 

@@ -21,7 +21,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 "tahun_terbit TEXT, " +
                 "penerbit TEXT, " +
                 "kategori TEXT , " +
-                "rangkuman TEXT  )";
+                "rangkuman TEXT ," +
+                "ratting REAL ," +
+                "jumlah INTEGER )";
         db.execSQL(sql);
 
     }

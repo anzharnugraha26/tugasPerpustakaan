@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,7 +14,8 @@ import com.example.applicationperpustakaantugas.datasource.DBHelper;
 import com.example.applicationperpustakaantugas.model.Buku;
 
 public class DetailActivity extends AppCompatActivity {
-    TextView tJudul, tIsbn , tahunTerbitT , tPenerbit , tKategori , tRangkuman ;
+    TextView tJudul, tIsbn , tahunTerbitT , tPenerbit , tKategori , tRangkuman , tJumlah;
+    RatingBar ratingBar ;
 
     private void loadDetailBuku(Long idBuku){
         try {
@@ -26,6 +28,8 @@ public class DetailActivity extends AppCompatActivity {
             tPenerbit.setText(buku.getPenerbit());
             tKategori.setText(buku.getKategori());
             tRangkuman.setText(buku.getRangkuman());
+            ratingBar.setRating(buku.getRatting());
+            tJumlah.setText(buku.getJumlah().toString());
         } catch (Exception e){
             Toast.makeText(this, "text", Toast.LENGTH_SHORT).show();
         }
@@ -53,6 +57,8 @@ public class DetailActivity extends AppCompatActivity {
         tPenerbit = findViewById(R.id.penerbitT);
         tKategori = findViewById(R.id.kategoriT);
         tRangkuman = findViewById(R.id.rangkumanT);
+        ratingBar = findViewById(R.id.dRating);
+        tJumlah = findViewById(R.id.dJumlah);
 
         long receivedBuku = getIntent().getLongExtra("id_buku", -1);
         if (receivedBuku == -1){
