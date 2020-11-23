@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,29 +7,34 @@
     android:layout_margin="15dp"
     android:orientation="vertical"
     tools:context=".ListActivity">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <androidx.appcompat.widget.SearchView
         android:id="@+id/buku_sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:queryHint="Cari..."
+        android:visibility="gone"
         app:iconifiedByDefault="false"/>
 
     <ListView
         android:id="@+id/bukuLv"
-        android:paddingTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_buku"
-        />
+        android:paddingTop="20dp"
+        tools:listitem="@layout/item_buku" />
+</LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_width="118dp"
+        android:layout_height="99dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

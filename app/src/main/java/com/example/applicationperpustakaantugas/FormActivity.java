@@ -210,7 +210,7 @@ public class FormActivity extends AppCompatActivity implements DatePickerDialog.
 
         long receivedBuku = getIntent().getLongExtra("id_buku", -1);
         if (receivedBuku == -1) {
-            Toast.makeText(this, "Tidak menerima data buku", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Tidak menerima data buku", Toast.LENGTH_SHORT).show();
         } else {
             loadDetailDataBuku(receivedBuku);
         }

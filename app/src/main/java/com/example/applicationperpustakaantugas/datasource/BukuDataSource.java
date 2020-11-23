@@ -9,7 +9,7 @@ import com.example.applicationperpustakaantugas.model.Buku;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BukuDataSource {
+public class  BukuDataSource {
     private final DBHelper dbHelper;
 
     public BukuDataSource(DBHelper dbHelper) {

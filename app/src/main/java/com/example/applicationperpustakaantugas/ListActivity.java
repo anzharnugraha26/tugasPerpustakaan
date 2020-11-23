@@ -18,6 +18,7 @@ import com.example.applicationperpustakaantugas.adapter.BukuItemAdapter;
 import com.example.applicationperpustakaantugas.datasource.BukuDataSource;
 import com.example.applicationperpustakaantugas.datasource.DBHelper;
 import com.example.applicationperpustakaantugas.model.Buku;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -81,7 +82,7 @@ public class ListActivity extends AppCompatActivity {
                 adapter.clear();
             }
             adapter.addAll(foundBukuList);
-            adapter.notifyDataSetChanged();
+//            adapter.notifyDataSetChanged();
         } catch (Exception e){
             Toast.makeText(this, "unable to search buku caused by" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -129,9 +130,7 @@ public class ListActivity extends AppCompatActivity {
 //            starForm();
 //        }
         switch (selectedMenuId){
-            case R.id.addBukuMenu:
-                startForm();
-                break;
+
             case R.id.search_menu:
                 updateVisibilitySearchView();
                     break;
@@ -155,7 +154,7 @@ public class ListActivity extends AppCompatActivity {
 
         searchViewLv = findViewById(R.id.buku_sv);
 
-        searchViewLv.setVisibility(View.GONE);
+
         searchViewLv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -166,6 +165,15 @@ public class ListActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 searchBuku(newText);
                 return true;
+            }
+        });
+
+
+        FloatingActionButton floatingActionButton = findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startForm();
             }
         });
     }
