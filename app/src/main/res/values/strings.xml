@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Application Perpustakaan</string>
+    <string name="app_name">App Perpustakaan</string>
 
     <string name="buku_agama">Buku Agama</string>
     <string name="buku_komputer">Buku Komputer</string>
