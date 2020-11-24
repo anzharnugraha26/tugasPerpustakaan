@@ -34,7 +34,12 @@ public class ListActivity extends AppCompatActivity {
             List<Buku> foundBukuList = bukuDataSource.getAll();
             adapter = new BukuItemAdapter(this, foundBukuList);
             bukulV.setAdapter(adapter);
-            bukulV.setOnItemClickListener((parent, view, position, id) -> startDetail(position));
+            bukulV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    startDetail(position);
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
@@ -82,7 +87,7 @@ public class ListActivity extends AppCompatActivity {
                 adapter.clear();
             }
             adapter.addAll(foundBukuList);
-//            adapter.notifyDataSetChanged();
+            adapter.notifyDataSetChanged();
         } catch (Exception e){
             Toast.makeText(this, "unable to search buku caused by" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -126,15 +131,15 @@ public class ListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int selectedMenuId = item.getItemId();
-//        if (selectedMenuId == R.id.addBukuMenu) {
-//            starForm();
-//        }
-        switch (selectedMenuId){
-
-            case R.id.search_menu:
-                updateVisibilitySearchView();
-                    break;
+        if (selectedMenuId == R.id.search_menu) {
+            updateVisibilitySearchView();
         }
+//        switch (selectedMenuId){
+//
+//            case R.id.search_menu:
+//                updateVisibilitySearchView();
+//                    break;
+//        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -167,7 +172,6 @@ public class ListActivity extends AppCompatActivity {
                 return true;
             }
         });
-
 
         FloatingActionButton floatingActionButton = findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
